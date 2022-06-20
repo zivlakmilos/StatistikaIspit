@@ -1,0 +1,171 @@
+<!--
+  This file is part of StatistikaIspit project (https://github.com/zivlakmilos/StatistikaIspit) for solving statistics final exam.
+  Copyright (c) 2022 Miloš Zivlak (milos@zivlak.rs).
+ 
+  This program is free software: you can redistribute it and/or modify  
+  it under the terms of the GNU General Public License as published by  
+  the Free Software Foundation, version 3.
+ 
+  This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+  General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License 
+  along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Miloš Zivlk">
+    <meta name="description" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:title" content="Statistika Ispit | Miloš Zivlak" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="img/profile.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Statistika Ispit | Miloš Zivlak</title>
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link
+        href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="theme/css/poole.css" />
+    <link rel="stylesheet" href="theme/css/hyde.css" />
+    <link rel="stylesheet" href="theme/css/syntax.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="theme-base-0d">
+    <div class="sidebar">
+        <div class="container sidebar-sticky">
+            <div class="sidebar-about">
+                <h1>
+                    <a href="/">
+                        <img class="profile-picture" src="img/profile.png">
+                    </a>
+                </h1>
+                <p class="lead"></p>
+                <p class="lead"></p>
+                <p></p>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-nav-item" href="#">
+                    Početna
+                </a>
+                <a class="sidebar-nav-item" href="#regression">
+                    Višestruka regresija
+                </a>
+                <a class="sidebar-nav-item" href="#linearProgramming">
+                    Linearno programiranje
+                </a>
+            </nav>
+            <p class="sidebar-copyright">&copy; <a href="http://zivlak.rs" target="_blank">Miloš Zivlak</a> 2022</p>
+        </div>
+    </div>
+
+    <div class="content container">
+        <div id="home" class="page active">
+            <h1>Statistika Ispit</h1>
+            <hr />
+            <p>
+                Program za rešavanje zadataka sa ispita iz statistike.
+                Ukoliko imate bilo kakvih pitanja, sugestija ili ste našli neku grešku pišite mi na:<br />
+                <a href="mailto:vps@zivlak.rs">vps@zivlak.rs</a>.
+            </p>
+            <p style="text-align: right;">
+                Made by <a href="http://zivlak.rs" target="_blank">Miloš Zivlak</a> with <span style="color: red;">&hearts;</span>
+            </p>
+        </div>
+
+        <div id="regression" class="page">
+            <h1>Višestruka regresija</h1>
+            <hr />
+
+            <div>
+                <table id="regressionTable">
+                    <tr>
+                        <th>x<sub>1</sub></th>
+                        <th>x<sub>2</sub></th>
+                        <th>y<sub>i</sub></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button id="regressionAdd">Dodaj novi red</button>
+            </div>
+
+            <br />
+            <br />
+
+            <div>
+                <button id="regressionCalculate">Računaj</button>
+            </div>
+
+            <hr />
+
+            <div id="regressionTableContainer">
+            </div>
+
+            <p id="regressionLatex"></p>
+        </div>
+
+        <div id="linearTrend" class="page">
+            <h1>Linearni trend</h1>
+            <hr />
+
+            <div>
+                <table id="linearTrendTable">
+                    <tr>
+                        <th>x<sub>1</sub></th>
+                        <th>x<sub>2</sub></th>
+                        <th>y<sub>i</sub></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button id="linearTrendAdd">Dodaj novi red</button>
+            </div>
+
+            <br />
+            <br />
+
+            <div>
+                <button id="linearTrendCalculate">Računaj</button>
+            </div>
+
+            <hr />
+
+            <div id="linearTrendTableContainer">
+            </div>
+
+            <p id="linearTrendLatex"></p>
+        </div>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/Regression.js"></script>
+    <script src="js/Routing.js"></script>
+    <script src="js/Main.js"></script>
+</body>
+
+</html>
