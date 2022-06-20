@@ -19,22 +19,7 @@
  * Main
  */
 
-function renderEquationsSystem(latex) {
-  $('#equationsLatex').empty();
-  $('#equationsLatex').html(latex);
-  MathJax.texReset();
-  MathJax.typesetClear();
-  MathJax.typesetPromise();
-}
-
-function renderLinearProgramming(latex, index) {
-  $('#linearProgrammingLatex' + index).empty();
-  $('#linearProgrammingLatex' + index).html(latex);
-  MathJax.texReset();
-  MathJax.typesetClear();
-  MathJax.typesetPromise();
-}
-
 (() => {
   regression();
+  linearTrend();
 })();

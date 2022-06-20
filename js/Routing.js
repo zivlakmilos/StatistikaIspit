@@ -23,8 +23,8 @@ pages.home.page = document.querySelector('#home');
 pages.regression = {};
 pages.regression.page = document.querySelector('#regression');
 
-pages.linearProgramming = {};
-pages.linearProgramming.page = document.querySelector('#linearProgramming');
+pages.linearTrend = {};
+pages.linearTrend.page = document.querySelector('#linearTrend');
 
 let path = '';
 
